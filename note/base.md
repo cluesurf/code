@@ -1,6 +1,10 @@
 # What goes in a base
 
-A base is a concept that is **not built out of other concepts**. Everything
+A base is a **vibe**: a generalized experience, neither a verb nor a noun.
+See [`vibe.md`](vibe.md) for what that means and why English cannot write
+one down.
+
+It is also a concept that is **not built out of other concepts**. Everything
 else is a compound, and compounds are not specified yet.
 
 ## The test
@@ -53,14 +57,23 @@ the vocabulary of craft: what a maker notices that nobody else does
 Most of these are hard to reach from a corpus, because a word for an inner
 state is said less often than a word for a chair without being less needed.
 
-## The three fields
+## The fields
 
 ```
-code   the four letters
-name   one word, lowercase, unique across the whole list
-role   thing, action, feature, or kind
-group  which shelf it sits on
-note   one line saying what it is
+code    the four letters
+name    one word, lowercase, unique across the whole list
+layer   vibe, class, or kind
+group   which shelf it sits on
+note    one line saying what it is
+```
+
+**`layer` is not a part of speech**, and there is deliberately no column for
+one. A vibe has no part of speech. That is the point.
+
+```
+vibe    a generalized experience, the ordinary case
+class   turns a vibe into a part of speech, adding no meaning
+kind    what a chain ends with, adding meaning
 ```
 
 **`name` is unique and the checker enforces it.** Two codes for one meaning
@@ -73,7 +86,7 @@ concept that has not been named yet.
 ## Where the first 147 came from
 
 The ontology and the 132 kinds, both carried over from the Tune work in
-`note/library/tune/`, where they were already settled and checked. Nothing
+Tune, where they were already settled and checked. Nothing
 was invented for Code.
 
 That is the intended pattern. **A base earns its slot somewhere else first**,

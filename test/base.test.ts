@@ -12,7 +12,15 @@ import {
   readBlock,
   readCode,
 } from '#/code/base'
-import { checkBases, findFree, isUsed, readBases } from '#/make/check'
+import {
+  LAYER,
+  checkBases,
+  findCodeClashes,
+  findFree,
+  isUsed,
+  readBases,
+  readEverything,
+} from '#/make/check'
 
 describe('the alphabet', () => {
   test('is sixteen distinct letters', () => {
@@ -119,13 +127,56 @@ describe('the base list', () => {
       expect(base.name).toMatch(/^[a-z]+$/)
     }
   })
+
+  test('every layer is one of the three', () => {
+    for (const base of bases) {
+      expect(LAYER.has(base.layer)).toBe(true)
+    }
+  })
+
+  test('the five classes are there and add no meaning', () => {
+    const classes = bases.filter(base => base.layer === 'class')
+    expect(classes.map(c => c.name).sort()).toEqual([
+      'action',
+      'cradle',
+      'design',
+      'manner',
+      'object',
+    ])
+  })
+
+  test('no base carries a part of speech, because a vibe has none', () => {
+    for (const base of bases) {
+      expect(base.layer).not.toBe('noun')
+      expect(base.layer).not.toBe('verb')
+    }
+  })
+})
+
+describe('every file together', () => {
+  test('no code is allocated twice, across all of them', () => {
+    expect(findCodeClashes()).toEqual([])
+  })
+
+  test('every code anywhere is well formed', () => {
+    for (const base of readEverything()) {
+      expect(isCode(base.code)).toBe(true)
+    }
+  })
+
+  test('the home tree is allocated', () => {
+    const home = readEverything().filter(base =>
+      base.group.startsWith('base/home/'),
+    )
+    expect(home.length).toBeGreaterThan(9000)
+  })
 })
 
 describe('the checker catches what it is for', () => {
   const at = (line: number, code: string, name: string) => ({
     code,
     name,
-    role: 'thing',
+    layer: 'vibe',
     group: 'test',
     note: '',
     line,
@@ -137,10 +188,20 @@ describe('the checker catches what it is for', () => {
     expect(problem[0].says).toContain('already used')
   })
 
-  test('a repeated name', () => {
+  test('a repeated name inside one layer', () => {
     const problem = checkBases([at(2, 'mmmm', 'one'), at(3, 'mmmn', 'one')])
     expect(problem).toHaveLength(1)
-    expect(problem[0].says).toContain('already on line')
+    expect(problem[0].says).toContain('is already a vibe on line 2')
+  })
+
+  test('but the same name in two layers is fine', () => {
+    // `heart` is a kind meaning the centre and a vibe meaning the organ.
+    // Two concepts that share an English spelling, not one concept twice.
+    const problem = checkBases([
+      { ...at(2, 'mmmm', 'heart'), layer: 'vibe' },
+      { ...at(3, 'mmmn', 'heart'), layer: 'kind' },
+    ])
+    expect(problem).toEqual([])
   })
 
   test('a bad length', () => {

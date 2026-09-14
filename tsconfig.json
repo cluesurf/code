@@ -10,11 +10,16 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
     "paths": {
       "#/*": ["./*"]
     }
   },
-  "include": ["code/**/*.ts", "make/**/*.ts", "test/**/*.ts", "hack/**/*.ts", "*.ts"],
+  "include": [
+    "code/**/*.ts",
+    "make/**/*.ts",
+    "test/**/*.ts",
+    "hack/**/*.ts",
+    "*.ts"
+  ],
   "exclude": ["node_modules", "tmp"]
 }

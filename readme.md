@@ -39,6 +39,128 @@ mddm   agent
 The whole space is `16^4`, which is **65,536 concepts**, and there will
 never be a 65,537th.
 
+## A base is a vibe
+
+**This is the central claim, and everything else follows from it.** A base
+is not a verb and not a noun. It is a generalized experience, and it is
+called a **vibe**.
+
+English cannot write one down. Take `discuss`. That word arrives already
+shaped as a verb, with a doer, a thing done to, and a tense. To get at the
+experience itself you have to strip all of that off, and English gives you
+nothing to write the remainder in.
+
+```
+discuss        the verb
+discussion     the verb plus a noun ending
+discussant     the verb plus a person ending
+```
+
+**The thing all three share has no name in English.** That is the mental
+baggage: every English root drags a part of speech behind it, and you cannot
+put the root down without it.
+
+In Code the bare experience is the base, and the class is a separate word.
+
+```
+mmmm            experience, the bare vibe, no class at all
+mmmm mmzz       to experience
+mmmm mmss       an experience
+mmmm mmww       experiencingly
+mmmm mmdd       experiential
+```
+
+**To make a verb you write the vibe and then the action class.** Four
+letters and four letters. A verb is eight letters, a noun is eight letters,
+and neither is privileged over the other.
+
+The five classes add no meaning at all, which is what separates them from
+the kinds.
+
+```
+mmzz  action   says the vibe as a doing            Tune -i
+mmss  object   says the vibe as a thing            Tune -a
+mmww  manner   says the vibe as a way of doing     Tune -e
+mmdd  design   says the vibe as a feature          Tune -o
+mmkk  cradle   says the vibe as an orientation     Tune -u
+```
+
+Tune does the same job with a single vowel, because Tune has to be short
+enough to say out loud. Code has no such constraint and pays four letters
+for perfect uniformity.
+
+**This is where the kinds earn their place.** Once the base is a bare vibe,
+"what kind of thing is the noun" becomes a real question with 132 answers.
+
+```
+<vibe> mndn    the process of it
+<vibe> mndd    one occurrence of it
+<vibe> mndb    what it leaves behind
+<vibe> mddm    one who does it
+```
+
+English writes all four of those as `discussion` or `discussant` and leaves
+the reader to work it out. That is not the reader's failing. Nothing in the
+word says which, and no common English suffix carries fewer than eight
+distinct concepts.
+
+Longer, in [note/vibe.md](note/vibe.md).
+
+## Universal or human
+
+**Code is human and Earth oriented on purpose.** `bird` is a foundational
+concept here, not a derived one, even though nothing in physics or logic
+makes birds fundamental.
+
+The reason is length. A code built only from abstract first principles has
+to reach everyday concepts by descending through every category above them,
+and that descent is long. Measured against WordNet's chain of "is a kind of"
+steps:
+
+```
+robin    13   redbreast < thrush < oscine < passeriform bird < bird <
+              craniate < chordate < animal < being < animate thing <
+              unit < object < physical entity < entity
+dog      13   dog < canid < carnivore < eutherian < mammal < craniate < ...
+mother   12   female parent < parent < genitor < primogenitor < ...
+bird      9   bird < craniate < chordate < animal < being < ...
+```
+
+**The mean across eighteen everyday words is 7.1 steps**, so about 28
+letters to say an ordinary thing and 52 to say `robin`. Run it yourself with
+`pnpm depth`.
+
+A universal code that says exactly what a bird is would be correct and
+unusable. Correctness is not the constraint that bites. Length is.
+
+**So there are two trees**, each running general to specific, differing in
+where the root is planted.
+
+```
+mesh   plants at the universal top and descends
+       entity, matter, life, animal, bird, robin
+
+home   plants at ordinary human experience and descends
+       bird, robin
+```
+
+`mesh` stops at what is true regardless of who is looking. `home` stops at
+what a human on Earth already has a word for without being taught. Neither
+is a rival to the other: a definition wants `mesh` and a sentence wants
+`home`.
+
+**Every home concept carries its mesh expansion**, and that bridge is what
+keeps the human tree from being arbitrary. Anything short can be said at
+length, so nothing is only sayable in the parochial tree.
+
+**`home` is built and `mesh` is not.** 9,463 concepts are allocated in the
+human tree. The universal tree is empty, which is the honest order to do it
+in: `home` is what makes the project usable and `mesh` is what makes it
+true.
+
+Longer, with the costs and the open questions, in
+[note/home.md](note/home.md).
+
 ## Why a fixed width
 
 The ceiling is the feature. A notation that can always grow one more
@@ -94,9 +216,16 @@ hardest to tell apart across accents.
      1   shelf is 256, named by the first two
 ```
 
-Only block `m` is allocated so far, and only with vocabulary that was
-already settled elsewhere: the ontology, and the 132 kinds a chain can
-end with. One shelf per group.
+Four of the sixteen blocks are in use.
+
+```
+m   structure   152    the ontology, the five classes, the 132 kinds
+n   home        480    the foundational bases, what other concepts use
+d b t  home   8,983    every other base
+k   link        495    what Mandarin composes with and English has no word for
+```
+
+**10,110 allocated, 55,426 free.** Block `m` holds one shelf per group.
 
 ```
 mm   ontology     the substance and its parts
@@ -124,6 +253,86 @@ make them harder to change later. The working estimate is 4,000 to
 things a first pass always underestimates: rocks, animals, plants,
 minerals, diseases, tools, and the spiritual, religious, emotional and
 experiential vocabulary that a technical list tends to skip entirely.
+
+## Three letters and a category
+
+**A base is three letters of identity and one of category.**
+
+```
+    x y z  .  c
+
+    xyz    the stem, one of 4,096
+    c      the category, one of 16
+```
+
+The category is not free. It is four yes-or-no questions about the concept,
+and each one is decided by a test rather than by interpretation.
+
+```
+1  object or action            does part of it happen before the rest
+2  type or instance            can it have instances
+3  independent or dependent    could it exist with nothing to inhere in
+4  unit or stuff               is part of it still it
+```
+
+Four bits, most significant first, so the category is a number from 0 to 15
+and the letter is that number.
+
+```
+ 0  m   object  type      independent  unit     dog, leaf, person
+ 1  n   object  type      independent  stuff    water, air, iron
+ 2  d   object  type      dependent    unit     blood type, leg count
+ 3  b   object  type      dependent    stuff    height, mass, age
+ 4  t   object  instance  independent  unit     Socrates, Paris, the UN
+ 5  k   object  instance  independent  stuff    this water, that sand
+ 6  h   object  instance  dependent    unit     her blood type
+ 7  s   object  instance  dependent    stuff    her height
+
+ 8  f   action  type      independent  unit     knock, arrival, sneeze
+ 9  v   action  type      independent  stuff    running, burning, waiting
+10  z   action  type      dependent    unit     number of steps
+11  x   action  type      dependent    stuff    speed, duration, tempo
+12  c   action  instance  independent  unit     the 1969 landing
+13  w   action  instance  independent  stuff    this afternoon's running
+14  l   action  instance  dependent    unit     how many times it knocked
+15  r   action  instance  dependent    stuff    how fast this one went
+```
+
+**The first eight letters are objects and the last eight are actions**,
+which falls out of putting the biggest cut in the highest bit.
+
+**4,096 words**, which is where working languages settle: Chinese basic
+literacy is 3,500 characters and Arabic and Hebrew run on 2,000 to 3,500
+three-consonant roots. **A list of 4,096 has an end.** Somebody can decide
+to learn it and one day be done.
+
+**Every word is three letters. There is no fourth position and no suffix.**
+
+```
+1 word     3 letters     xyz
+2 words    6 letters     xyz xyz
+3 words    9 letters     xyz xyz xyz
+```
+
+**The last word is the head.** `sandfly` is a fly, `birdsong` is a song.
+
+**A category is a word like any other, said after what it applies to.**
+
+```
+mdm        create
+mdm tks    create-action, which English writes as "create"
+mdm mss    create-object, the thing made
+```
+
+Sixteen of the 4,096 are the categories, and they are spent out of the same
+budget as everything else. Saying one is optional: a word alone is the
+concept with no claim made about its category, which is the normal case.
+
+**That makes the category system and the compound system one thing.**
+`mdm tks` is an action for exactly the reason `cow meat` is a meat.
+
+The whole thing, with examples for all sixteen and the tests that decide
+each question, is in [note/category.md](note/category.md).
 
 ## Landmarks
 
@@ -172,12 +381,56 @@ over the landmarks, which is exactly what happened the first time:
 ## Files
 
 ```
-base/base.csv     the bases, one per line, the source of truth
-base/base.txt     the same thing, column aligned, for reading
-code/base.ts      the alphabet, and the conversion between a base and its number
-make/check.ts     the gate
-make/seed.ts      how base.csv was first written. Run once, not again
+base/base              152   the structure: ontology, classes, kinds
+base/home/base.base    480   the foundational bases
+base/home/base       8,983   every other base
+base/home/link         492   compounds, as the bases they are made of
+base/link/chinese.base 1,308 Mandarin morphemes, each pointing at a code
+base/link/chinese.link 5,302 Mandarin compounds, as their parts
+
+code/base.ts     the alphabet, and the conversion between a base and a number
+code/table.ts    writes every file as a CSV and an aligned TXT
+make/check.ts    the gate
+make/seed.ts     how base/base.csv was first written. Run once, not again
+make/fill.ts     how the home tree and the links were allocated. Also once
 ```
+
+**Every file is written twice**, as a `.csv` and as a column-aligned
+`.txt`. The CSV is the source of truth and is what gets edited. The TXT is
+regenerated from it and is what gets read. They are never edited apart.
+
+**A compound gets no code of its own.** It IS its parts, and giving it an
+address would mean the same concept had two.
+
+```
+name        code       parts
+father      mkdn nnbl  male + parent
+girlfriend  nmnm nmnw  girl + friend
+bathroom    nmlf nmnz  bath + room
+```
+
+**A Mandarin morpheme shares a code where English already has the
+concept**, and takes a new one where it does not. 813 of 1,308 are shared,
+which is a rough measure of how much of Mandarin's composing vocabulary
+English also treats as basic.
+
+```
+code  chinese  english  how
+dmss  人        person   shared
+dmwt  学        learn    shared
+kmmm  不        no       new
+```
+
+**A name may repeat across layers, and must not repeat inside one.** `heart`
+is a kind meaning the centre of something and a home base meaning the organ.
+Those are two concepts that share an English spelling, not one concept
+listed twice, so they hold two codes. Checking the name globally would force
+them to merge, which is a wrong claim rather than a tidy one. 116 home bases
+shadow a kind's name this way.
+
+The ontology is the exception. `experience`, `vibe`, `tone`, `link`, `beat`,
+`weave`, `self`, `balance`, `mind` and `fill` really are the same concept in
+both places, so they hold one code and appear once, in `base/base`.
 
 The CSV and the TXT are mirrors. The CSV is edited, the TXT is rewritten
 by the checker, and neither is ever edited by hand to disagree with the
@@ -227,12 +480,30 @@ next piece of work.
 
 ## Status
 
-**Early.** The format is settled, the alphabet is settled, the checker
-works, and 147 bases are allocated. The base concepts themselves are
-barely started, and compounds are not specified at all.
+**Early, but no longer empty.**
+
+```
+settled     the format, the alphabet, the five classes, the 132 kinds
+built       the home tree, 9,347 concepts with permanent codes
+built       492 English compounds and 5,302 Mandarin ones
+empty       the mesh tree, every one of it
+open        how compounds are written as a chain, beyond the pair
+open        whether the letters themselves carry meaning
+```
+
+**The home tree is allocated but not reviewed concept by concept.** It was
+carried over in bulk from work that reviewed the English side, and the
+question of whether each one deserves a permanent address in 65,536 has
+been answered wholesale rather than one at a time.
 
 ## Notes
 
+- [the category letter, and the sixteen](note/category.md)
+- [order, heads, and where context lives](note/order.md)
+- [how specific a base is allowed to be](note/depth.md)
+- [the first four thousand stems](note/stem.md)
+- [a base is a vibe](note/vibe.md)
+- [two trees, universal and human](note/home.md)
 - [the shape of the space](note/space.md)
 - [why sixteen and four](note/size.md)
 - [what goes in a base](note/base.md)

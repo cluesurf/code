@@ -14,8 +14,9 @@
  *   pnpm check --next 20
  */
 
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { writeTable } from '#/code/table'
 import {
   CODE,
   SIZE,
@@ -31,17 +32,51 @@ import {
 
 const HERE = new URL('..', import.meta.url).pathname
 const CSV = join(HERE, 'base/base.csv')
-const TXT = join(HERE, 'base/base.txt')
+
+/**
+ * Every file that ALLOCATES codes, and the layer each one holds.
+ *
+ * A code may be allocated once and once only. That is the whole point of a
+ * single address space, and it is the one thing that cannot be checked file
+ * by file.
+ *
+ * `onlyNew` is for the link files. `base/link/chinese.base.csv` mostly
+ * POINTS at codes the home tree already allocated, which is the design
+ * working rather than a clash: 学 shares the code for `learn` on purpose.
+ * Only its `new` rows hand out an address, and only those are checked. Its
+ * `none` rows hand out nothing at all, because the character is in the file
+ * as a record and the block ran out before it.
+ */
+export const CODED: Array<{
+  path: string
+  layer: string
+  onlyNew?: boolean
+}> = [
+  { path: 'base/base.csv', layer: '' },
+  { path: 'base/home/base.csv', layer: 'vibe' },
+  { path: 'base/link/chinese.base.csv', layer: 'link', onlyNew: true },
+]
+
 
 export type Base = {
   code: string
   name: string
-  role: string
+  /** vibe, class, or kind. See `note/vibe.md` */
+  layer: string
   group: string
   note: string
   /** which line of the CSV it came from, for the error messages */
   line: number
 }
+
+/**
+ * The three layers, and nothing else.
+ *
+ *   vibe    a generalized experience, neither verb nor noun
+ *   class   turns a vibe into a part of speech, adding no meaning
+ *   kind    what a chain ends with, adding meaning
+ */
+export const LAYER = new Set(['vibe', 'class', 'kind'])
 
 /** Split one CSV record, honouring double quotes. */
 export function splitCsv(line: string): Array<string> {
@@ -80,11 +115,11 @@ export function readBases(path = CSV): Array<Base> {
     if (!line[i].trim()) {
       continue
     }
-    const [code, name, role, group, note] = splitCsv(line[i])
+    const [code, name, layer, group, note] = splitCsv(line[i])
     out.push({
       code: (code ?? '').trim(),
       name: (name ?? '').trim(),
-      role: (role ?? '').trim(),
+      layer: (layer ?? '').trim(),
       group: (group ?? '').trim(),
       note: (note ?? '').trim(),
       line: i + 1,
@@ -142,17 +177,24 @@ export function checkBases(bases: Array<Base>): Array<Problem> {
       continue
     }
 
-    // two codes for one meaning is the quiet failure. Nothing breaks, and
-    // from then on there are two ways to say the same thing
-    const nameAt = seenName.get(base.name)
+    // Two codes for one meaning is the quiet failure. Nothing breaks, and
+    // from then on there are two ways to say the same thing.
+    //
+    // Scoped to the LAYER, not the whole list. `heart` is a kind meaning the
+    // centre of something and a home base meaning the organ, and those are
+    // two concepts that happen to share an English spelling. Checking the
+    // name globally would force them to merge, which is a wrong claim rather
+    // than a tidy one.
+    const key = `${base.layer}|${base.name}`
+    const nameAt = seenName.get(key)
     if (nameAt !== undefined) {
       problem.push({
         line: base.line,
         code: base.code,
-        says: `the name "${base.name}" is already on line ${nameAt}`,
+        says: `"${base.name}" is already a ${base.layer} on line ${nameAt}`,
       })
     } else {
-      seenName.set(base.name, base.line)
+      seenName.set(key, base.line)
     }
 
     if (/\s/.test(base.name)) {
@@ -162,9 +204,99 @@ export function checkBases(bases: Array<Base>): Array<Problem> {
         says: `the name "${base.name}" is more than one word`,
       })
     }
+
+    if (!LAYER.has(base.layer)) {
+      problem.push({
+        line: base.line,
+        code: base.code,
+        says: `layer "${base.layer}" is not one of ${[...LAYER].join(', ')}`,
+      })
+    }
   }
 
   return problem
+}
+
+/**
+ * Every coded row in the project, from every file.
+ *
+ * The home and link files carry `code,name,...` with no layer column of
+ * their own, so the layer comes from which file the row was in.
+ */
+export function readEverything(): Array<Base> {
+  const out: Array<Base> = []
+  for (const { path, layer, onlyNew } of CODED) {
+    const full = join(HERE, path)
+    if (!existsSync(full)) {
+      continue
+    }
+    if (!layer) {
+      // carry the path in `group` so the report can count per file, the
+      // same way the link files do
+      out.push(...readBases(full).map(base => ({ ...base, group: path })))
+      continue
+    }
+    const line = readFileSync(full, 'utf8').split('\n')
+    const head = splitCsv(line[0])
+    const howAt = head.indexOf('how')
+    for (let i = 1; i < line.length; i++) {
+      if (!line[i].trim()) {
+        continue
+      }
+      const field = splitCsv(line[i])
+      const [code, name] = field
+      if (onlyNew && howAt >= 0 && (field[howAt] ?? '').trim() !== 'new') {
+        continue
+      }
+      out.push({
+        code: (code ?? '').trim(),
+        name: (name ?? '').trim(),
+        layer,
+        group: path,
+        note: '',
+        line: i + 1,
+      })
+    }
+  }
+  return out
+}
+
+/** Only the codes, and which file each came from. Nothing may repeat. */
+export function findCodeClashes(): Array<string> {
+  const seen = new Map<string, string>()
+  const clash: Array<string> = []
+  for (const { path, onlyNew } of CODED) {
+    const full = join(HERE, path)
+    if (!existsSync(full)) {
+      continue
+    }
+    const line = readFileSync(full, 'utf8').split('\n')
+    const head = splitCsv(line[0])
+    const howAt = head.indexOf('how')
+    for (let i = 1; i < line.length; i++) {
+      if (!line[i].trim()) {
+        continue
+      }
+      const field = splitCsv(line[i])
+      const [code, name] = field
+      const at = (code ?? '').trim()
+      if (!at) {
+        continue
+      }
+      // a row that points at an existing code is not allocating one
+      if (onlyNew && howAt >= 0 && (field[howAt] ?? '').trim() !== 'new') {
+        continue
+      }
+      const had = seen.get(at)
+      const here = `${path}:${i + 1} ${name}`
+      if (had) {
+        clash.push(`${at} in both ${had} and ${here}`)
+      } else {
+        seen.set(at, here)
+      }
+    }
+  }
+  return clash
 }
 
 /** Is this four-letter value taken. The question the file exists to answer. */
@@ -201,35 +333,20 @@ export function findFree(
   return out
 }
 
-/** Rewrite `base.txt` as a column-aligned mirror of the CSV. */
-export function writeMirror(bases: Array<Base>, path = TXT): void {
-  const columns = ['code', 'name', 'role', 'group', 'note']
-  const rows = bases.map(base => [
-    base.code,
-    base.name,
-    base.role,
-    base.group,
-    base.note,
-  ])
-  const width = columns.map(column => column.length)
-  for (const row of rows) {
-    for (let n = 0; n < width.length; n++) {
-      if (row[n].length > width[n]) {
-        width[n] = row[n].length
-      }
-    }
-  }
-  const line = (row: Array<string>): string =>
-    row
-      .map((value, n) => value.padEnd(width[n]))
-      .join('  ')
-      .trimEnd()
-
-  const out = [line(columns), width.map(w => '-'.repeat(w)).join('  ')]
-  for (const row of rows) {
-    out.push(line(row))
-  }
-  writeFileSync(path, out.join('\n') + '\n', 'utf8')
+/** Rewrite `base/base.txt` as a column-aligned mirror of the CSV. */
+export function writeMirror(bases: Array<Base>): void {
+  writeTable(
+    join(HERE, 'base'),
+    'base',
+    ['code', 'name', 'layer', 'group', 'note'],
+    bases.map(base => [
+      base.code,
+      base.name,
+      base.layer,
+      base.group,
+      base.note,
+    ]),
+  )
 }
 
 function report(bases: Array<Base>): void {
@@ -276,6 +393,29 @@ async function main(): Promise<void> {
   }
 
   report(bases)
+
+  // the one thing that cannot be checked file by file
+  const clash = findCodeClashes()
+  if (clash.length) {
+    console.log('')
+    for (const one of clash.slice(0, 20)) {
+      console.log(`  ${one}`)
+    }
+    console.log('')
+    console.log(`${clash.length} codes used in more than one file`)
+    process.exit(1)
+  }
+
+  const everything = readEverything()
+  console.log('')
+  console.log('across every file:')
+  for (const { path } of CODED) {
+    const n = everything.filter(base => base.group === path).length
+    if (n) {
+      console.log(`  ${path.padEnd(28)} ${String(n).padStart(6)}`)
+    }
+  }
+  console.log(`  ${'total'.padEnd(28)} ${String(everything.length).padStart(6)}`)
 
   if (problem.length) {
     console.log('')

@@ -39,10 +39,9 @@ learnable. `l` is the line: light in a realm, join as a force, smooth as a
 manner, path as a standing. You learn sixteen essences, not sixty-four
 entries.
 
-The essences are not invented here. They come from the sound-meaning work in
-`note/library/tune/sound-meanings.md` and the Tune essay at
-<https://cluesurf.substack.com/p/tune>, which assigns a felt meaning to every
-consonant. Code uses sixteen of those twenty-two.
+The essences are not invented here. They come from Tune's sound-meaning work
+and the essay at <https://cluesurf.substack.com/p/tune>, which assigns a felt
+meaning to every consonant. Code uses sixteen of those twenty-two.
 
 ## What it reads like
 

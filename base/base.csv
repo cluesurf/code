@@ -1,8 +1,13 @@
-code,name,role,group,note
-mmmm,experience,thing,ontology,"the one substance, all else a pattern in it"
-mmff,fill,action,ontology,"the receptive pull of a link, gathering inward"
-mnmn,tone,thing,ontology,"the felt value: pleasure, pain, or peace"
-mnnm,oneness,thing,ontology,"the undivided whole, the source and the goal"
+code,name,layer,group,note
+mmmm,experience,vibe,ontology,"the one substance, all else a pattern in it"
+mmdd,design,class,class,"says the vibe as a feature of a thing, Tune -o"
+mmkk,cradle,class,class,"says the vibe as an orientation in the flow, Tune -u"
+mmss,object,class,class,"says the vibe as a thing, what Tune marks with -a"
+mmff,fill,vibe,ontology,"the receptive pull of a link, gathering inward"
+mmzz,action,class,class,"says the vibe as a doing, what Tune marks with -i"
+mmww,manner,class,class,"says the vibe as a way of doing, Tune -e"
+mnmn,tone,vibe,ontology,"the felt value: pleasure, pain, or peace"
+mnnm,oneness,vibe,ontology,"the undivided whole, the source and the goal"
 mndm,act,kind,phase,"the bare doing, no bounds in view"
 mndn,process,kind,phase,the doing unfolding through stages
 mndd,event,kind,phase,one bounded countable occurrence
@@ -133,16 +138,16 @@ mldt,give,kind,do,supply it
 mldk,take,kind,do,remove it
 mldh,put,kind,do,place it on
 mlds,seek,kind,do,look for it
-mrdm,manner,kind,way,in that way
+mrdm,wise,kind,way,in that way
 mrdn,route,kind,way,by that route
-nmmn,balance,thing,ontology,"the coupling of the poles, the pull to centre"
-nnnn,other,thing,ontology,whatever lies beyond the boundary
-tttt,beat,thing,ontology,one discrete step of time
-hhhh,aware,feature,ontology,"receiving other vibes, clearly or dimly"
-ssss,self,thing,ontology,a coherent weave with a boundary
-ffmm,will,action,ontology,"the projective push of a link, pouring outward"
-vvvv,vibe,thing,ontology,"one quantum of experience, with a tone, at a moment"
-cccc,mind,thing,ontology,the aware self seated in the spectrum
-wwww,weave,thing,ontology,"the interwoven web of vibes, itself a higher vibe"
-llll,link,thing,ontology,the connection between two experiences
-rrrr,tuning,action,ontology,the self moving back toward unity
+nmmn,balance,vibe,ontology,"the coupling of the poles, the pull to centre"
+nnnn,other,vibe,ontology,whatever lies beyond the boundary
+tttt,beat,vibe,ontology,one discrete step of time
+hhhh,aware,vibe,ontology,"receiving other vibes, clearly or dimly"
+ssss,self,vibe,ontology,a coherent weave with a boundary
+ffmm,will,vibe,ontology,"the projective push of a link, pouring outward"
+vvvv,vibe,vibe,ontology,"one quantum of experience, with a tone, at a moment"
+cccc,mind,vibe,ontology,the aware self seated in the spectrum
+wwww,weave,vibe,ontology,"the interwoven web of vibes, itself a higher vibe"
+llll,link,vibe,ontology,the connection between two experiences
+rrrr,tuning,vibe,ontology,the self moving back toward unity

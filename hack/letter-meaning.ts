@@ -14,10 +14,10 @@
  * That is 64 meanings for 16 letters, four each, and 65,536 readings, which
  * is exactly the size of the space. Nothing is wasted and nothing overflows.
  *
- * The per-letter senses below are taken from the user's own sound-meaning
- * work, `note/library/tune/sound-meanings.md` and the Tune essay at
- * https://cluesurf.substack.com/p/tune, and then specialised per position.
- * They are a PROPOSAL. See `hack/readme.md` for what testing them showed.
+ * The per-letter senses below come from Tune's sound-meaning work and the
+ * essay at https://cluesurf.substack.com/p/tune, then get specialised per
+ * position. They are a PROPOSAL. See `hack/readme.md` for what testing them
+ * showed.
  *
  *   pnpm hack                read the allocated bases through the table
  *   pnpm hack bktr wsmn      read any base

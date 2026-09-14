@@ -13,11 +13,15 @@
   "scripts": {
     "check": "tsx make/check.ts",
     "seed": "tsx make/seed.ts",
+    "fill": "tsx make/fill.ts",
     "hack": "tsx hack/letter-meaning.ts",
+    "depth": "tsx hack/depth.ts",
     "test": "vitest run",
     "types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/sax": "^1.2.7",
+    "sax": "^1.6.0",
     "tsx": "^4.11.0",
     "vitest": "^4.1.0"
   }

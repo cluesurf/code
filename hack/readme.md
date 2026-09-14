@@ -3,6 +3,29 @@
 Throwaway experiments. Nothing here is part of the project, and nothing here
 is meant to keep working.
 
+Nothing under `code/`, `make/` or `test/` imports anything from here, so the
+project builds and checks without any of it.
+
+## depth.ts
+
+**Question.** How expensive is it to reach an everyday concept from the
+bottom, if everything has to be built from abstract first principles?
+
+```
+pnpm depth
+pnpm depth bird dog water
+```
+
+Needs Open English WordNet, which is not shipped here because it is large
+and separately licensed. Download `english-wordnet-2024.xml.gz` from
+<https://github.com/globalwordnet/english-wordnet/releases>, then put it at
+`data/english-wordnet.xml.gz` or run with `WORDNET=<path> pnpm depth`.
+
+**Answer.** The mean over eighteen everyday words is 7.1 steps of "is a kind
+of", so roughly 28 letters per ordinary concept and 52 for `robin`. That is
+the measurement behind [`note/home.md`](../note/home.md) and the argument
+for a second, human-scale tree.
+
 ## letter-meaning.ts
 
 **Question.** Can each of the sixteen letters carry meaning, so a four-letter
@@ -29,8 +52,8 @@ answers it. Four positions, sixteen answers each, 64 meanings in all, and
               flow trace act shade idea field path cycle
 ```
 
-The per-letter senses come from `note/library/tune/sound-meanings.md` and the
-Tune essay, then get specialised per position.
+The per-letter senses come from Tune's sound-meaning work and the essay at
+<https://cluesurf.substack.com/p/tune>, then get specialised per position.
 
 ### What happened
 
