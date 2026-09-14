@@ -1,0 +1,24 @@
+{
+  "name": "@cluesurf/code",
+  "displayName": "code",
+  "description": "A fixed-width notation for concepts",
+  "license": "SEE LICENSE IN license.md",
+  "publisher": "cluesurf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cluesurf/code.git"
+  },
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "tsx make/check.ts",
+    "seed": "tsx make/seed.ts",
+    "hack": "tsx hack/letter-meaning.ts",
+    "test": "vitest run",
+    "types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsx": "^4.11.0",
+    "vitest": "^4.1.0"
+  }
+}

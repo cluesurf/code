@@ -1,0 +1,148 @@
+code,name,role,group,note
+mmmm,experience,thing,ontology,"the one substance, all else a pattern in it"
+mmff,fill,action,ontology,"the receptive pull of a link, gathering inward"
+mnmn,tone,thing,ontology,"the felt value: pleasure, pain, or peace"
+mnnm,oneness,thing,ontology,"the undivided whole, the source and the goal"
+mndm,act,kind,phase,"the bare doing, no bounds in view"
+mndn,process,kind,phase,the doing unfolding through stages
+mndd,event,kind,phase,one bounded countable occurrence
+mndb,result,kind,phase,the state of affairs it leaves
+mndt,product,kind,phase,the made object it leaves
+mndk,state,kind,phase,the condition of being in or after it
+mndh,attempt,kind,phase,"the trying, success not implied"
+mnds,habit,kind,phase,the repeated doing as a disposition
+mndf,start,kind,phase,its beginning
+mndv,finish,kind,phase,its ending
+mndz,stage,kind,phase,one step inside the process
+mndx,cycle,kind,phase,the recurring round of it
+mndc,repeat,kind,phase,another run of the same
+mndw,chance,kind,phase,the opportunity for it
+mndl,pause,kind,phase,the break inside it
+mddm,agent,kind,role,one who does it
+mddn,target,kind,role,one it is done to
+mddd,recipient,kind,role,one who receives it
+mddb,tool,kind,role,what it is done with
+mddt,method,kind,role,how it is done
+mddk,place,kind,role,where it is done
+mddh,time,kind,role,when it is done
+mdds,source,kind,role,what it comes from
+mddf,goal,kind,role,what it aims at
+mddv,content,kind,role,what it conveys
+mddz,measure,kind,role,how much of it
+mddx,rate,kind,role,how fast it goes
+mddc,fee,kind,role,what is paid for it
+mddw,record,kind,role,the document of it
+mddl,cause,kind,role,what brings it about
+mddr,holder,kind,role,what keeps or carries it
+mdbm,path,kind,role,the route it takes
+mbdm,part,kind,part,a component of it
+mbdn,whole,kind,part,what it is a part of
+mbdd,edge,kind,part,its boundary
+mbdb,heart,kind,part,its centre
+mbdt,cover,kind,part,what encloses it
+mbdk,unit,kind,part,one countable piece of it
+mbdh,share,kind,part,a portion of it
+mbds,waste,kind,part,the leftover of it
+mbdf,trace,kind,part,the evidence it leaves
+mbdv,mark,kind,part,the sign of it
+mtdm,nature,kind,quality,"the property as such, uncountable"
+mtdn,essence,kind,quality,what it is at bottom
+mtdd,degree,kind,quality,how much of the property
+mtdb,instance,kind,quality,one bearer of the property
+mtdt,ability,kind,quality,the capacity for it
+mtdk,tendency,kind,quality,the leaning toward it
+mtdh,lack,kind,quality,the absence of it
+mtds,excess,kind,quality,too much of it
+mtdf,norm,kind,quality,the standard amount of it
+mtdv,flaw,kind,quality,the defect in it
+mtdz,worth,kind,quality,the value of it
+mtdx,rank,kind,quality,its position in an order
+mtdc,force,kind,quality,it as a power acting
+mtdw,disease,kind,quality,it as an illness
+mtdl,thing,kind,quality,"it as a bare object, no further reading"
+mkdm,young,kind,life,its offspring
+mkdn,male,kind,life,the male one
+mkdd,female,kind,life,the female one
+mkdb,home,kind,life,where it lives
+mkdt,sound,kind,life,the noise it makes
+mkdk,meat,kind,life,its flesh as food
+mkdh,skin,kind,life,its hide or coat
+mhdm,practice,kind,body,the doing of it as a discipline
+mhdn,study,kind,body,the science of it
+mhdd,society,kind,body,the body of people
+mhdb,domain,kind,body,the field or territory
+mhdt,language,kind,body,the way of speaking
+mhdk,collection,kind,body,the set of them
+mhdh,system,kind,body,them arranged and working
+mhds,period,kind,body,the span of being it
+mhdf,office,kind,body,the position held
+mhdv,art,kind,body,the craft of it
+mhdz,belief,kind,body,the holding of it as true
+mhdx,school,kind,body,the tradition of thought
+mhdc,trade,kind,body,the occupation
+mhdw,rite,kind,body,the ceremony of it
+mhdl,law,kind,body,the rule-body for it
+mhdr,game,kind,body,it as a played thing
+msdm,right,kind,standing,the permission to do it
+msdn,duty,kind,standing,the obligation to do it
+msdd,ban,kind,standing,the prohibition of it
+msdb,rule,kind,standing,the norm governing it
+msdt,need,kind,standing,the requirement for it
+msdk,risk,kind,standing,the chance of harm from it
+msdh,claim,kind,standing,the assertion of entitlement
+msds,debt,kind,standing,what is owed from it
+msdf,blame,kind,standing,responsibility for the harm
+msdv,credit,kind,standing,recognition for the good
+mfdm,model,kind,frame,the abstract shape of it
+mfdn,token,kind,frame,one concrete copy of it
+mfdd,formal,kind,frame,the official version
+mfdb,draft,kind,frame,the preliminary version
+mfdt,sample,kind,frame,a representative bit
+mfdk,fake,kind,frame,the counterfeit of it
+mfdh,name,kind,frame,the word for it
+mfds,image,kind,frame,the picture of it
+mfdf,story,kind,frame,the narrative of it
+mvdm,like,kind,shape,it is like it
+mvdn,resembling,kind,shape,it looks like it
+mvdd,style,kind,shape,in its manner
+mvdb,partly,kind,shape,it partly is it
+mvdt,shaped,kind,shape,it has its shape
+mzdm,oriented,kind,tie,it concerns it
+mzdn,featuring,kind,tie,it bears it
+mzdd,material,kind,tie,it is made of it
+mzdb,bearing,kind,tie,it carries or yields it
+mxdm,full,kind,amount,saturated with it
+mxdn,less,kind,amount,missing it
+mxdd,much,kind,amount,an overwhelming amount of it
+mxdb,rich,kind,amount,abundant in it
+mxdt,poor,kind,amount,scarce in it
+mcdm,able,kind,mode,it can be done to
+mcdn,prone,kind,mode,it is likely to
+mcdd,worthy,kind,mode,it deserves it
+mcdb,resistant,kind,mode,it withstands it
+mcdt,free,kind,mode,it is exempt from it
+mwdm,progress,kind,aspect,it is happening now
+mwdn,complete,kind,aspect,it is done
+mwdd,past,kind,aspect,it happened before
+mwdb,future,kind,aspect,it will happen
+mldm,make,kind,do,cause it to be
+mldn,undo,kind,do,reverse it
+mldd,again,kind,do,do it once more
+mldb,become,kind,do,come to be it
+mldt,give,kind,do,supply it
+mldk,take,kind,do,remove it
+mldh,put,kind,do,place it on
+mlds,seek,kind,do,look for it
+mrdm,manner,kind,way,in that way
+mrdn,route,kind,way,by that route
+nmmn,balance,thing,ontology,"the coupling of the poles, the pull to centre"
+nnnn,other,thing,ontology,whatever lies beyond the boundary
+tttt,beat,thing,ontology,one discrete step of time
+hhhh,aware,feature,ontology,"receiving other vibes, clearly or dimly"
+ssss,self,thing,ontology,a coherent weave with a boundary
+ffmm,will,action,ontology,"the projective push of a link, pouring outward"
+vvvv,vibe,thing,ontology,"one quantum of experience, with a tone, at a moment"
+cccc,mind,thing,ontology,the aware self seated in the spectrum
+wwww,weave,thing,ontology,"the interwoven web of vibes, itself a higher vibe"
+llll,link,thing,ontology,the connection between two experiences
+rrrr,tuning,action,ontology,the self moving back toward unity
