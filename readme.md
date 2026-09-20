@@ -389,6 +389,7 @@ base/link/chinese.base 1,308 Mandarin morphemes, each pointing at a code
 base/link/chinese.link 5,302 Mandarin compounds, as their parts
 
 code/base.ts     the alphabet, and the conversion between a base and a number
+code/join.ts     composition: structure and application, parser and serializer
 code/table.ts    writes every file as a CSV and an aligned TXT
 make/check.ts    the gate
 make/seed.ts     how base/base.csv was first written. Run once, not again
@@ -408,6 +409,28 @@ father      mkdn nnbl  male + parent
 girlfriend  nmnm nmnw  girl + friend
 bathroom    nmlf nmnz  bath + room
 ```
+
+**The `parts` column is a flat list, and a flat list cannot say which
+parts group together.** `small + bath + room` is two different concepts
+depending on where the bracket falls, and nothing in that column
+distinguishes them. A handful of characters do, with no brackets:
+
+```
+nmhn-nnmd-nmnr    (small + bath) + room
+nmhn-nnmd~nmnr    small + (bath + room)
+mmmm∘mmzz         the action class over the vibe, to experience
+nnmd-nmnr∘mmss    the object class over the whole of bath-room
+```
+
+`-`, `~` and `·` are three levels of grouping, `∘` applies one complete
+expression to another, and `+` ends the word. A base keeps its address
+when it becomes an operand, which is the property that matters here.
+Every mark has an ascii spelling too, so the same compound is
+`nnmd-nmnr*mmss` where the other characters cannot go.
+
+The specification is [note/join.md](note/join.md), and it is one parser
+for both layers: the same notation writes English concept trees and code
+trees.
 
 **A Mandarin morpheme shares a code where English already has the
 concept**, and takes a new one where it does not. 813 of 1,308 are shared,
@@ -484,10 +507,11 @@ next piece of work.
 
 ```
 settled     the format, the alphabet, the five classes, the 132 kinds
+settled     how a compound is written as a tree, beyond the pair
 built       the home tree, 9,347 concepts with permanent codes
 built       492 English compounds and 5,302 Mandarin ones
 empty       the mesh tree, every one of it
-open        how compounds are written as a chain, beyond the pair
+open        the compound files still record flat pairs, not trees
 open        whether the letters themselves carry meaning
 ```
 
@@ -499,6 +523,7 @@ been answered wholesale rather than one at a time.
 ## Notes
 
 - [the category letter, and the sixteen](note/category.md)
+- [composition, structure and application](note/join.md)
 - [order, heads, and where context lives](note/order.md)
 - [how specific a base is allowed to be](note/depth.md)
 - [the first four thousand stems](note/stem.md)
