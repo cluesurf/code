@@ -381,6 +381,11 @@ over the landmarks, which is exactly what happened the first time:
 ## Files
 
 ```
+base/word/base       3,838   THE 4,096. Three letters, one hex digit each
+base/word/derive    71,476   every derived concept, one row per join
+base/word/affix        165   which English affix realises which operator
+base/word/fold         272   words that look derived. A queue, not a verdict
+
 base/base              152   the structure: ontology, classes, kinds
 base/home/base.base    480   the foundational bases
 base/home/base       8,983   every other base
@@ -389,11 +394,19 @@ base/link/chinese.base 1,308 Mandarin morphemes, each pointing at a code
 base/link/chinese.link 5,302 Mandarin compounds, as their parts
 
 code/base.ts     the alphabet, and the conversion between a base and a number
+code/word.ts     the three-letter space, and how block `m` is cut
+code/affix.ts    the operator table. The one hand-written file
+code/prefix.ts   what each English prefix already is
+make/word.ts     allocates the 4,096
+make/derive.ts   builds every derived concept from them
 code/join.ts     composition: structure and application, parser and serializer
 code/table.ts    writes every file as a CSV and an aligned TXT
 make/check.ts    the gate
+make/distill.ts  does every home base earn its address, asked of Tune
 make/seed.ts     how base/base.csv was first written. Run once, not again
 make/fill.ts     how the home tree and the links were allocated. Also once
+
+base/home/distill    every home base with its verdict, worst first
 ```
 
 **Every file is written twice**, as a `.csv` and as a column-aligned
@@ -472,7 +485,16 @@ mndm,act,kind,phase,"the bare doing, no bounds in view"
 pnpm check              what is used, what is free, and what is wrong
 pnpm check --next 20    the next twenty free bases, in order
 pnpm check --free h     the next free bases inside block h
+pnpm distill            does every home base earn its address
+pnpm distill --commit   write base/home/distill.csv and .txt
 ```
+
+**The two ask different questions and neither covers the other.**
+`check` asks whether the FILE is well formed: one code per meaning, no
+stray letters, no repeats. It says nothing about whether a concept
+deserves a code. `distill` asks only that, and can answer only for the
+4,086 home bases Tune knows about at all, which is why the unexamined
+5,477 are reported as their own number rather than folded into a pass.
 
 The checker answers the one question that gets expensive to answer late:
 **has this four-letter value already been given a meaning.** It also
@@ -519,6 +541,34 @@ open        whether the letters themselves carry meaning
 carried over in bulk from work that reviewed the English side, and the
 question of whether each one deserves a permanent address in 65,536 has
 been answered wholesale rather than one at a time.
+
+**`pnpm distill` turns that admission into a number.** It asks Tune's
+hand distillation, which judges English words one at a time into `base`,
+`compound` or `name`, what it thinks of every home base.
+
+```
+  home bases              9,563
+  addresses to reclaim      266
+
+   251  JUDGED A COMPOUND     first = order one, lunch = midday meal
+    15  JUDGED NOT A CONCEPT  sir, troy, benjamin, goliath, iodine
+  5477  UNKNOWN TO TUNE       never examined, which is the larger fact
+   824  in english.csv, unjudged
+  2994  seated in tune        it earns the address
+```
+
+**The 266 are defects and the 5,477 are not.** A base judged a compound
+holds an address for something that IS its parts, which is the one thing
+the compound rule forbids, because then one concept has two addresses.
+The seven worst are ordinals and fractions: `first`, `second`, `third`,
+`fourth`, `fifth`, `half` and `quarter` all hold permanent codes, and an
+ordinal is `inverse` plus the number. `sir` is the single highest-load
+defect at 964.47 and is not a concept at all.
+
+The full table is [base/home/distill.csv](base/home/distill.csv), worst
+first, one row per home base. Nothing is moved by it: an address stays
+where it is until a person retires it, because that is a decision about
+a permanent identity rather than a cleanup.
 
 ## Notes
 

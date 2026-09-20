@@ -1,0 +1,167 @@
+form        join      head                                    role         show
+----------  --------  --------------------------------------  -----------  ---------------
+-ion        kind      act process event result product state               creation
+-tion       kind      act process event result product state               reception
+-sion       kind      act process event result state                       tension
+-ition      kind      act process result state                             addition
+-ation      kind      act process result content                           information
+-ification  kind      act process result                                   clarification
+-ization    kind      act process result                                   nationalization
+-isation    kind      act process result                                   nationalisation
+-ment       kind      act result state product                             payment
+-ance       kind      act state nature                                     performance
+-ence       kind      act state nature                                     presence
+-ancy       kind      state nature                                         vacancy
+-ency       kind      state nature                                         urgency
+-ure        kind      act result product                                   pressure
+-al         kind      act                                     V>N          arrival
+-age        kind      act measure collection fee                           marriage
+-ing        kind      act process product                     V>N N>N      building
+-ery        kind      practice place collection                            bakery
+-ry         kind      practice place collection                            weaponry
+-er         kind      agent tool place                        V>N N>N      creator
+-or         kind      agent tool                                           creator
+-ar         kind      agent tool                              V>N          liar
+-ee         kind      target recipient                                     payee
+-ant        kind      agent tool                              V>N          servant
+-ent        kind      agent tool                              V>N          student
+-ist        kind      agent school                                         artist
+-ism        kind      school practice act                                  creationism
+-ster       kind      agent                                                youngster
+-ology      kind      study                                                phonology
+-logy       kind      study                                                geology
+-ics        kind      study                                                physics
+-ory        kind      place tool                              V>N          factory
+-arium      kind      place                                                aquarium
+-atory      kind      place tool                              V>N          laboratory
+-ness       kind      nature                                               kindness
+-ity        kind      nature instance                                      creativity
+-ty         kind      nature                                               safety
+-cy         kind      nature state                                         accuracy
+-th         kind      nature                                  J>N          width
+-ability    kind      ability                                              readability
+-ibility    kind      ability                                              visibility
+-ship       kind      state office art                                     kingship
+-hood       kind      period society                                       childhood
+-dom        kind      state domain                                         kingdom
+-ling       kind      young                                                duckling
+-let        kind      unit young                                           treelet
+-ette       kind      unit                                                 kitchenette
+-ess        kind      female                                               lioness
+-itis       kind      disease                                              arthritis
+-osis       kind      disease                                              sclerosis
+-ia         kind      disease domain                                       anaemia
+-ate        kind      office domain                           N>N          doctorate
+-ian        kind      agent language                                       historian
+-an         kind      agent language                          N>N          republican
+-ite        kind      agent unit                                           luddite
+-able       kind      able                                                 creatable
+-ible       kind      able                                                 visible
+-ful        kind      full                                                 joyful
+-less       kind      less                                                 treeless
+-ish        kind      partly like                                          greenish
+-like       kind      like                                                 treelike
+-ly         kind      like                                    N>J J>J      kingly
+-y          kind      like full                                            angry
+-ous        kind      full oriented                                        joyous
+-ious       kind      full oriented                                        ambitious
+-ive        kind      prone oriented                                       creative
+-ative      kind      prone oriented                                       talkative
+-al         kind      oriented                                N>J J>J      national
+-ial        kind      oriented                                             official
+-ical       kind      oriented                                             historical
+-ic         kind      oriented like                                        heroic
+-ual        kind      oriented                                             factual
+-ary        kind      oriented                                N>J          legendary
+-en         kind      material                                N>J          wooden
+-ed         kind      featuring complete                      N>J V>J J>J  horned
+-ing        kind      progress                                V>J N>J J>J  running
+-some       kind      much                                                 burdensome
+-ward       kind      route                                                homeward
+-wards      kind      route                                                backwards
+-wise       kind      route manner                                         lengthwise
+-proof      kind      resistant                                            waterproof
+-free       kind      free                                                 duty-free
+-oid        kind      resembling                                           humanoid
+-istic      kind      resembling                                           nationalistic
+-esque      kind      resembling                                           picturesque
+-worthy     kind      worthy                                               noteworthy
+-fold       kind      measure                                              twofold
+-ine        kind      oriented material                       N>J          canine
+-ize        kind      make                                                 nationalize
+-ise        kind      make                                                 nationalise
+-ify        kind      make                                                 clarify
+-fy         kind      make                                                 liquefy
+-en         kind      make become                             J>V N>V      harden
+-ate        kind      make                                    N>V J>V      activate
+en-         kind      make put give                                        endanger
+em-         kind      make put give                                        embody
+be-         kind      make put                                             befriend
+-ly         kind      manner                                  J>R N>R V>R  creatively
+-ally       kind      manner                                               historically
+-ably       kind      manner                                               reasonably
+un-         compound  not                                                  unhappy
+in-         compound  not                                                  incomplete
+im-         compound  not                                                  impossible
+il-         compound  not                                                  illegal
+ir-         compound  not                                                  irregular
+non-        compound  not                                                  nonstandard
+dis-        compound  not                                                  dishonest
+a-          compound  not                                                  atypical
+an-         compound  not                                                  anaerobic
+de-         kind      undo                                                 defrost
+re-         kind      again                                                rebuild
+anti-       compound  opposite                                             antifreeze
+counter-    compound  opposite                                             counterattack
+contra-     compound  opposite                                             contraflow
+pre-        compound  before                                               preheat
+fore-       compound  before                                               foresee
+ante-       compound  before                                               antechamber
+proto-      compound  before                                               prototype
+post-       compound  after                                                postdate
+mis-        compound  wrong                                                misread
+mal-        compound  wrong                                                malformed
+co-         compound  with                                                 cowrite
+con-        compound  with                                                 conjoin
+com-        compound  with                                                 compress
+syn-        compound  with                                                 synchronise
+self-       compound  self                                                 self-taught
+auto-       compound  self                                                 autopilot
+inter-      compound  between                                              interweave
+intra-      compound  inside                                               intravenous
+trans-      compound  across                                               transplant
+over-       compound  over                                                 overcook
+super-      compound  over                                                 superimpose
+hyper-      compound  over                                                 hyperactive
+ultra-      compound  over                                                 ultrasound
+arch-       compound  over                                                 archbishop
+under-      compound  under                                                undercook
+sub-        compound  under                                                submarine
+hypo-       compound  under                                                hypothermia
+semi-       kind      partly                                               semicircle
+demi-       kind      partly                                               demigod
+hemi-       kind      partly                                               hemisphere
+pseudo-     kind      fake                                                 pseudoscience
+quasi-      kind      fake                                                 quasiparticle
+micro-      compound  small                                                microclimate
+mini-       compound  small                                                minibus
+nano-       compound  small                                                nanotube
+macro-      compound  large                                                macroeconomics
+mega-       compound  large                                                megacity
+mono-       compound  one                                                  monorail
+uni-        compound  one                                                  unicycle
+bi-         compound  two                                                  bilingual
+di-         compound  two                                                  dioxide
+duo-        compound  two                                                  duotone
+multi-      compound  many                                                 multilingual
+poly-       compound  many                                                 polygon
+pluri-      compound  many                                                 plurilingual
+homo-       compound  same                                                 homogeneous
+iso-        compound  same                                                 isometric
+sym-        compound  same                                                 symmetric
+equi-       compound  same                                                 equidistant
+meta-       compound  meta                                                 metadata
+-er         compound  more                                                 bigger
+-est        compound  most                                                 biggest
+-most       compound  most                                                 topmost
+un-         kind      undo                                    V>V V>N      untie

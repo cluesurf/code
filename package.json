@@ -12,6 +12,9 @@
   "type": "module",
   "scripts": {
     "check": "tsx make/check.ts",
+    "word": "tsx make/word.ts",
+    "derive": "tsx make/derive.ts",
+    "distill": "tsx make/distill.ts",
     "seed": "tsx make/seed.ts",
     "fill": "tsx make/fill.ts",
     "hack": "tsx hack/letter-meaning.ts",
