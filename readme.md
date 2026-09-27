@@ -6,12 +6,12 @@
 <br/>
 
 <p align='center'>
-  <!-- <img src='https://github.com/cluesurf/code/blob/make/view/code.svg?raw=true' height='222'/> -->
+  <img src='https://github.com/cluesurf/code/blob/make/view/code.svg?raw=true' height='222'/>
 </p>
 
 <h3 align='center'>code</h3>
 <p align='center'>
-  A fixed-width notation for concepts Ω
+  A distinct semantic registry Λ
 </p>
 
 <br/>
@@ -41,14 +41,14 @@ never be a 65,537th.
 
 ## A base is a vibe
 
-**This is the central claim, and everything else follows from it.** A base
-is not a verb and not a noun. It is a generalized experience, and it is
-called a **vibe**.
+**This is the central claim, and everything else follows from it.** A
+base is not a verb and not a noun. It is a generalized experience, and
+it is called a **vibe**.
 
 English cannot write one down. Take `discuss`. That word arrives already
-shaped as a verb, with a doer, a thing done to, and a tense. To get at the
-experience itself you have to strip all of that off, and English gives you
-nothing to write the remainder in.
+shaped as a verb, with a doer, a thing done to, and a tense. To get at
+the experience itself you have to strip all of that off, and English
+gives you nothing to write the remainder in.
 
 ```
 discuss        the verb
@@ -57,10 +57,11 @@ discussant     the verb plus a person ending
 ```
 
 **The thing all three share has no name in English.** That is the mental
-baggage: every English root drags a part of speech behind it, and you cannot
-put the root down without it.
+baggage: every English root drags a part of speech behind it, and you
+cannot put the root down without it.
 
-In Code the bare experience is the base, and the class is a separate word.
+In Code the bare experience is the base, and the class is a separate
+word.
 
 ```
 mmmm            experience, the bare vibe, no class at all
@@ -71,11 +72,11 @@ mmmm mmdd       experiential
 ```
 
 **To make a verb you write the vibe and then the action class.** Four
-letters and four letters. A verb is eight letters, a noun is eight letters,
-and neither is privileged over the other.
+letters and four letters. A verb is eight letters, a noun is eight
+letters, and neither is privileged over the other.
 
-The five classes add no meaning at all, which is what separates them from
-the kinds.
+The five classes add no meaning at all, which is what separates them
+from the kinds.
 
 ```
 mmzz  action   says the vibe as a doing            Tune -i
@@ -86,11 +87,12 @@ mmkk  cradle   says the vibe as an orientation     Tune -u
 ```
 
 Tune does the same job with a single vowel, because Tune has to be short
-enough to say out loud. Code has no such constraint and pays four letters
-for perfect uniformity.
+enough to say out loud. Code has no such constraint and pays four
+letters for perfect uniformity.
 
-**This is where the kinds earn their place.** Once the base is a bare vibe,
-"what kind of thing is the noun" becomes a real question with 132 answers.
+**This is where the kinds earn their place.** Once the base is a bare
+vibe, "what kind of thing is the noun" becomes a real question with 132
+answers.
 
 ```
 <vibe> mndn    the process of it
@@ -99,23 +101,23 @@ for perfect uniformity.
 <vibe> mddm    one who does it
 ```
 
-English writes all four of those as `discussion` or `discussant` and leaves
-the reader to work it out. That is not the reader's failing. Nothing in the
-word says which, and no common English suffix carries fewer than eight
-distinct concepts.
+English writes all four of those as `discussion` or `discussant` and
+leaves the reader to work it out. That is not the reader's failing.
+Nothing in the word says which, and no common English suffix carries
+fewer than eight distinct concepts.
 
 Longer, in [note/vibe.md](note/vibe.md).
 
 ## Universal or human
 
-**Code is human and Earth oriented on purpose.** `bird` is a foundational
-concept here, not a derived one, even though nothing in physics or logic
-makes birds fundamental.
+**Code is human and Earth oriented on purpose.** `bird` is a
+foundational concept here, not a derived one, even though nothing in
+physics or logic makes birds fundamental.
 
-The reason is length. A code built only from abstract first principles has
-to reach everyday concepts by descending through every category above them,
-and that descent is long. Measured against WordNet's chain of "is a kind of"
-steps:
+The reason is length. A code built only from abstract first principles
+has to reach everyday concepts by descending through every category
+above them, and that descent is long. Measured against WordNet's chain
+of "is a kind of" steps:
 
 ```
 robin    13   redbreast < thrush < oscine < passeriform bird < bird <
@@ -127,14 +129,14 @@ bird      9   bird < craniate < chordate < animal < being < ...
 ```
 
 **The mean across eighteen everyday words is 7.1 steps**, so about 28
-letters to say an ordinary thing and 52 to say `robin`. Run it yourself with
-`pnpm depth`.
+letters to say an ordinary thing and 52 to say `robin`. Run it yourself
+with `pnpm depth`.
 
 A universal code that says exactly what a bird is would be correct and
 unusable. Correctness is not the constraint that bites. Length is.
 
-**So there are two trees**, each running general to specific, differing in
-where the root is planted.
+**So there are two trees**, each running general to specific, differing
+in where the root is planted.
 
 ```
 mesh   plants at the universal top and descends
@@ -144,19 +146,19 @@ home   plants at ordinary human experience and descends
        bird, robin
 ```
 
-`mesh` stops at what is true regardless of who is looking. `home` stops at
-what a human on Earth already has a word for without being taught. Neither
-is a rival to the other: a definition wants `mesh` and a sentence wants
-`home`.
+`mesh` stops at what is true regardless of who is looking. `home` stops
+at what a human on Earth already has a word for without being taught.
+Neither is a rival to the other: a definition wants `mesh` and a
+sentence wants `home`.
 
-**Every home concept carries its mesh expansion**, and that bridge is what
-keeps the human tree from being arbitrary. Anything short can be said at
-length, so nothing is only sayable in the parochial tree.
+**Every home concept carries its mesh expansion**, and that bridge is
+what keeps the human tree from being arbitrary. Anything short can be
+said at length, so nothing is only sayable in the parochial tree.
 
-**`home` is built and `mesh` is not.** 9,463 concepts are allocated in the
-human tree. The universal tree is empty, which is the honest order to do it
-in: `home` is what makes the project usable and `mesh` is what makes it
-true.
+**`home` is built and `mesh` is not.** 9,463 concepts are allocated in
+the human tree. The universal tree is empty, which is the honest order
+to do it in: `home` is what makes the project usable and `mesh` is what
+makes it true.
 
 Longer, with the costs and the open questions, in
 [note/home.md](note/home.md).
@@ -265,8 +267,9 @@ experiential vocabulary that a technical list tends to skip entirely.
     c      the category, one of 16
 ```
 
-The category is not free. It is four yes-or-no questions about the concept,
-and each one is decided by a test rather than by interpretation.
+The category is not free. It is four yes-or-no questions about the
+concept, and each one is decided by a test rather than by
+interpretation.
 
 ```
 1  object or action            does part of it happen before the rest
@@ -275,8 +278,8 @@ and each one is decided by a test rather than by interpretation.
 4  unit or stuff               is part of it still it
 ```
 
-Four bits, most significant first, so the category is a number from 0 to 15
-and the letter is that number.
+Four bits, most significant first, so the category is a number from 0 to
+15 and the letter is that number.
 
 ```
  0  m   object  type      independent  unit     dog, leaf, person
@@ -303,10 +306,11 @@ which falls out of putting the biggest cut in the highest bit.
 
 **4,096 words**, which is where working languages settle: Chinese basic
 literacy is 3,500 characters and Arabic and Hebrew run on 2,000 to 3,500
-three-consonant roots. **A list of 4,096 has an end.** Somebody can decide
-to learn it and one day be done.
+three-consonant roots. **A list of 4,096 has an end.** Somebody can
+decide to learn it and one day be done.
 
-**Every word is three letters. There is no fourth position and no suffix.**
+**Every word is three letters. There is no fourth position and no
+suffix.**
 
 ```
 1 word     3 letters     xyz
@@ -324,9 +328,10 @@ mdm tks    create-action, which English writes as "create"
 mdm mss    create-object, the thing made
 ```
 
-Sixteen of the 4,096 are the categories, and they are spent out of the same
-budget as everything else. Saying one is optional: a word alone is the
-concept with no claim made about its category, which is the normal case.
+Sixteen of the 4,096 are the categories, and they are spent out of the
+same budget as everything else. Saying one is optional: a word alone is
+the concept with no claim made about its category, which is the normal
+case.
 
 **That makes the category system and the compound system one thing.**
 `mdm tks` is an action for exactly the reason `cow meat` is a meat.
@@ -410,11 +415,12 @@ base/home/distill    every home base with its verdict, worst first
 ```
 
 **Every file is written twice**, as a `.csv` and as a column-aligned
-`.txt`. The CSV is the source of truth and is what gets edited. The TXT is
-regenerated from it and is what gets read. They are never edited apart.
+`.txt`. The CSV is the source of truth and is what gets edited. The TXT
+is regenerated from it and is what gets read. They are never edited
+apart.
 
-**A compound gets no code of its own.** It IS its parts, and giving it an
-address would mean the same concept had two.
+**A compound gets no code of its own.** It IS its parts, and giving it
+an address would mean the same concept had two.
 
 ```
 name        code       parts
@@ -446,9 +452,9 @@ for both layers: the same notation writes English concept trees and code
 trees.
 
 **A Mandarin morpheme shares a code where English already has the
-concept**, and takes a new one where it does not. 813 of 1,308 are shared,
-which is a rough measure of how much of Mandarin's composing vocabulary
-English also treats as basic.
+concept**, and takes a new one where it does not. 813 of 1,308 are
+shared, which is a rough measure of how much of Mandarin's composing
+vocabulary English also treats as basic.
 
 ```
 code  chinese  english  how
@@ -457,16 +463,17 @@ dmwt  学        learn    shared
 kmmm  不        no       new
 ```
 
-**A name may repeat across layers, and must not repeat inside one.** `heart`
-is a kind meaning the centre of something and a home base meaning the organ.
-Those are two concepts that share an English spelling, not one concept
-listed twice, so they hold two codes. Checking the name globally would force
-them to merge, which is a wrong claim rather than a tidy one. 116 home bases
-shadow a kind's name this way.
+**A name may repeat across layers, and must not repeat inside one.**
+`heart` is a kind meaning the centre of something and a home base
+meaning the organ. Those are two concepts that share an English
+spelling, not one concept listed twice, so they hold two codes. Checking
+the name globally would force them to merge, which is a wrong claim
+rather than a tidy one. 116 home bases shadow a kind's name this way.
 
-The ontology is the exception. `experience`, `vibe`, `tone`, `link`, `beat`,
-`weave`, `self`, `balance`, `mind` and `fill` really are the same concept in
-both places, so they hold one code and appear once, in `base/base`.
+The ontology is the exception. `experience`, `vibe`, `tone`, `link`,
+`beat`, `weave`, `self`, `balance`, `mind` and `fill` really are the
+same concept in both places, so they hold one code and appear once, in
+`base/base`.
 
 The CSV and the TXT are mirrors. The CSV is edited, the TXT is rewritten
 by the checker, and neither is ever edited by hand to disagree with the
@@ -537,10 +544,10 @@ open        the compound files still record flat pairs, not trees
 open        whether the letters themselves carry meaning
 ```
 
-**The home tree is allocated but not reviewed concept by concept.** It was
-carried over in bulk from work that reviewed the English side, and the
-question of whether each one deserves a permanent address in 65,536 has
-been answered wholesale rather than one at a time.
+**The home tree is allocated but not reviewed concept by concept.** It
+was carried over in bulk from work that reviewed the English side, and
+the question of whether each one deserves a permanent address in 65,536
+has been answered wholesale rather than one at a time.
 
 **`pnpm distill` turns that admission into a number.** It asks Tune's
 hand distillation, which judges English words one at a time into `base`,
